@@ -2,9 +2,9 @@
   <div id="app">
     <router-view/>
     <div class="navs">
-      <router-link to="/nav" class="first"> <span class="glyphicon glyphicon-home  "></span> 首页</router-link>
+      <router-link to="/" class="first"> <span class="glyphicon glyphicon-home  "></span> 首页</router-link>
       <router-link to="/nav"> <span class="glyphicon glyphicon-info-sign"></span>使用规则</router-link>
-      <router-link to="/nav"> <span class="glyphicon glyphicon-user"></span>个人中心</router-link>
+      <router-link to="/own"> <span class="glyphicon glyphicon-user"></span>个人中心</router-link>
     </div>
 
   </div>
