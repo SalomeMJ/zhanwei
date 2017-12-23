@@ -3,9 +3,6 @@
     <el-carousel-item v-for="(item,index) in items" :key="index">
       <h3>{{ item.img }}</h3>
     </el-carousel-item>
-    <el-carousel-item class="name">
-      <h4>1234</h4>
-    </el-carousel-item>
 
   </el-carousel>
 </template>
@@ -42,12 +39,6 @@
     display: inline-block;
     height: 1.8rem;
   }
-
-  /*.name h4{*/
-    /*margin: 0;*/
-    /*background-color: red;*/
-    /*position: absolute;*/
-  /*}*/
   .el-carousel__container {
     height: 1.8rem;
 
