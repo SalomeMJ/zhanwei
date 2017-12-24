@@ -50,7 +50,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   .home>ul,.home>li{
     list-style: none;
     display: inline-block;
