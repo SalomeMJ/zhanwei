@@ -22,3 +22,12 @@ new Vue({
   template: '<App/>',
   components: { App }
 });
+
+var Ww = document.documentElement.clientWidth;
+var xc = Ww/360;
+console.log(Ww);
+
+var ht = document.getElementsByTagName('html')[0];
+ht.style.fontSize = 100*xc+'px';
+
+console.log(ht.style.fontSize);

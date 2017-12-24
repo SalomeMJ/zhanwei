@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="background">
     <div><img class="perbg" src="static/img/beijing.jpeg" alt=""></div>
     <div class="headerPhotoWrap">
       <img class="headPhoto" :src="src" alt="">
       <br>
       <span>嘉木</span>
     </div>
-    <div >
+    <div class="headerPhotoWrap">
       <div class="studyTime"><strong>0小时</strong><br><small>学习时间</small></div>
       <div class="studyTime"><strong>0小时</strong><br><small>学习时间</small></div>
       <div class="studyTime"><strong>0小时</strong><br><small>学习时间</small></div>
@@ -14,29 +14,34 @@
     </div>
     <div>
       <ul class="list-group">
-        <li class="list-group-item menu-item">
-          <span><img src="static/img/勋章.png" alt=""></span>
+        <li class="list-group-item menu-item" v-on:click="clickEnter">
+          <span><img src="static/img/xunzhang.png" alt=""></span>
           <div>我的勋章</div>
           <strong> ></strong>
         </li>
         <li class="list-group-item menu-item">
-          <span><img src="static/img/勋章.png" alt=""></span>
+          <span><img src="static/img/jifen.png" alt=""></span>
           <div>我的积分</div>
           <strong> ></strong>
         </li>
         <li class="list-group-item menu-item">
-          <span><img src="static/img/勋章.png" alt=""></span>
+          <span><img src="static/img/message.png" alt=""></span>
           <div>消息中心</div>
           <strong> ></strong>
         </li>
         <li class="list-group-item menu-item">
-          <span><img src="static/img/勋章.png" alt=""></span>
+          <span><img src="static/img/dengpao.png" alt=""></span>
           <div>意见反馈</div>
           <strong> ></strong>
         </li>
         <li class="list-group-item menu-item">
-          <span><img src="static/img/勋章.png" alt=""></span>
+          <span><img src="static/img/guize.png" alt=""></span>
           <div>使用规则</div>
+          <strong> ></strong>
+        </li>
+        <li class="list-group-item menu-item">
+          <span><img src="static/img/set.png" alt=""></span>
+          <div>个人设置</div>
           <strong> ></strong>
         </li>
 
@@ -51,8 +56,14 @@
     name: 'HelloWorld',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App',
         src:  "static/img/touxiang.jpg"
+      }
+    },
+    methods:{
+      clickEnter:function () {
+
+        console.log("11111");
+       this.$router.push({path:'/myHonor'})
       }
     }
   }
@@ -60,8 +71,12 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .background{
+    background: #f0f0f0;
+  }
+
   .perbg{
-    width: 3.75rem;
+    width: 3.6rem;
     height: 1.5rem;
 
   }
@@ -75,11 +90,16 @@
     text-align: center;
     /*width: .8rem;*/
     /*height: 1.2rem;*/
+    background-color: white;
   }
   .studyTime{
     display: inline-block;
     width: 30%;
 
+  }
+  li.menu-item{
+    margin-top: .15rem;
+    display: block!important;
   }
   .menu-item>span>img{
     display: inline-block;
