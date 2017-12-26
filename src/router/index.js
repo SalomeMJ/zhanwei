@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/home'
 import Nav from '@/components/nav'
 import Own from '@/components/own'
+import myHonor from '@/components/myHonor'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path:'/own',
       name:'own',
       component:Own
+    },
+    {
+      path:'/myHonor',
+      name:'myHonor',
+      component:myHonor
     }
   ]
 })

@@ -18,8 +18,16 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-
   router,
   template: '<App/>',
   components: { App }
 });
+
+var Ww = document.documentElement.clientWidth;
+var xc = Ww/360;
+console.log(Ww);
+
+var ht = document.getElementsByTagName('html')[0];
+ht.style.fontSize = 100*xc+'px';
+
+console.log(ht.style.fontSize);

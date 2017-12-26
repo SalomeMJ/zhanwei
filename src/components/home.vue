@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <div class="top">
         <p class="hello">
           <span>您好:</span>
@@ -108,8 +108,8 @@
     }
   }
 </script>
-    <style>
-  ul,li{
+<style scoped>
+  .home>ul,.home>li{
     list-style: none;
     display: inline-block;
     margin: 0;
