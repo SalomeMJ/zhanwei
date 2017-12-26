@@ -1,18 +1,34 @@
 <template>
   <div id="app">
+
+
+    <transition appear>
     <router-view/>
+
+    </transition>
+
+
+
     <div class="navs">
       <router-link to="/" class="first"> <span class="glyphicon glyphicon-home  "></span> 首页</router-link>
       <router-link to="/nav"> <span class="glyphicon glyphicon-info-sign"></span>使用规则</router-link>
       <router-link to="/own"> <span class="glyphicon glyphicon-user"></span>个人中心</router-link>
     </div>
-
   </div>
 </template>
 
 <script>
 export default {
   name: 'app',
+  watch:{
+    '$route' (to, from) {
+      const toDepth = to.path.split('/').length
+      const fromDepth = from.path.split('/').length
+      this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+    }
+
+  }
+
 
 }
 </script>
@@ -56,6 +72,16 @@ export default {
 
 
   }
+.slide-left-enter, .slide-right-leave-active {
+  opacity: 0;
+  -webkit-transform: translate(50px, 0);
+  transform: translate(50px, 0);
+}
+.slide-left-leave-active, .slide-right-enter {
+  opacity: 0;
+  -webkit-transform: translate(-50px, 0);
+  transform: translate(-50px, 0);
+}
 </style>
 
 

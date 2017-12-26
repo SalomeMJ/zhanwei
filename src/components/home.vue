@@ -72,7 +72,7 @@
           <img src="../assets/setting.png" alt="">
         </div>
 
-        <ul class="aboutZuo">
+        <ul class="aboutZuo" v-on:click="enterDetail">
           <li>
             <div class="left">
               <span class="floor">2楼206综合图书馆(2楼)</span>
@@ -105,6 +105,11 @@
           {img:""},
           {img:""}
         ]
+      }
+    },
+    methods:{
+      enterDetail:function () {
+        this.$router.push({path:'/homedetail'})
       }
     }
   }

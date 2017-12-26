@@ -14,27 +14,27 @@
     </div>
     <div>
       <ul class="list-group">
-        <li class="list-group-item menu-item" v-on:click="clickEnter">
+        <li class="list-group-item menu-item" v-on:click="clickEnterMyhonor">
           <span><img src="static/img/xunzhang.png" alt=""></span>
           <div>我的勋章</div>
           <strong> ></strong>
         </li>
-        <li class="list-group-item menu-item">
+        <li class="list-group-item menu-item" v-on:click="clickEnterMycode">
           <span><img src="static/img/jifen.png" alt=""></span>
           <div>我的积分</div>
           <strong> ></strong>
         </li>
-        <li class="list-group-item menu-item">
+        <li class="list-group-item menu-item" >
           <span><img src="static/img/message.png" alt=""></span>
           <div>消息中心</div>
           <strong> ></strong>
         </li>
-        <li class="list-group-item menu-item">
+        <li class="list-group-item menu-item"  v-on:click="clickEnterBack">
           <span><img src="static/img/dengpao.png" alt=""></span>
           <div>意见反馈</div>
           <strong> ></strong>
         </li>
-        <li class="list-group-item menu-item">
+        <li class="list-group-item menu-item"  v-on:click="clickEnterUser">
           <span><img src="static/img/guize.png" alt=""></span>
           <div>使用规则</div>
           <strong> ></strong>
@@ -60,10 +60,18 @@
       }
     },
     methods:{
-      clickEnter:function () {
-
-        console.log("11111");
+      clickEnterMyhonor:function () {
        this.$router.push({path:'/myHonor'})
+      },
+      clickEnterMycode:function () {
+        this.$router.push({path:'/myCode'})
+      },
+      clickEnterBack:function () {
+        this.$router.push({path:'/mySuggestion'})
+
+      },
+      clickEnterUser:function () {
+        this.$router.push({path:'/myUser'})
       }
     }
   }
