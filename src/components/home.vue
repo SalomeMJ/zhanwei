@@ -369,8 +369,6 @@
     font-size: 0.14rem;
     margin-top: 0.05rem;
     border:0.01rem solid green;
-
-
   }
 </style>
 
