@@ -331,7 +331,6 @@
     margin: 0;
     padding: 0;
     border-bottom:0.01rem solid #999;
-
   }
 .aboutZuo li .left{
   width: 85%;
