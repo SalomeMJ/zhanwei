@@ -5,7 +5,9 @@
   </div>
 
 </template>
-<script></script>
+<script>
+
+</script>
 <style>
   .myCode>h3{
     margin: 0;
