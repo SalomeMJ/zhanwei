@@ -220,6 +220,7 @@
   }
   #container {
     height: 1.8rem;
+    margin-top: -0.4rem;
   }
   .content{
     width:100%;

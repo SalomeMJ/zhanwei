@@ -1,20 +1,15 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <transition :name="transitionName">
+      <router-view class="child-view"></router-view>
+    </transition>
+
   </div>
 </template>
 
 <script>
 export default {
   name: 'app',
-//  watch:{
-//    '$route' (to, from) {
-//      const toDepth = to.path.split('/').length
-//      const fromDepth = from.path.split('/').length
-//      this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
-//    }
-//  }
-//  ,
   data(){
     return {
       transitionName:''
@@ -85,14 +80,18 @@ export default {
   -webkit-transform: translate(100%, 0);
   transform: translate(100%, 0);
 }
-
 .slide-left-leave-active,
 .slide-right-enter {
   opacity: 1;
   -webkit-transform: translate(-100%, 0);
   transform: translate(-100% 0);
 }
-
+.child-view {
+  position: absolute;
+  width: 100%;
+  transition: all .8s ease;
+  top: 40px;
+}
 </style>
 
 

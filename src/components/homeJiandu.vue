@@ -42,7 +42,7 @@
 
      },
      gohome:function(){
-       this.$router.push({path:'/'})
+         this.$router.goBack();
      }
   }
 };
@@ -79,6 +79,7 @@
     background-color: #dee6f2;
     height: 100%;
     width: 100%;
+    margin-top: -0.4rem;
   }
 
 .jiandu img{
