@@ -74,6 +74,7 @@
         this.$router.push({path:'/myUser'})
       }
     }
+
   }
 </script>
 

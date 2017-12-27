@@ -1,7 +1,7 @@
 <template>
   <div class="text-left myhonor">
 
-    <h3 ><span  onclick="window.history.go(-1)"><返回</span>我的勋章</h3>
+    <h3 ><span @click="go()"><返回</span>我的勋章</h3>
     <div class="xunzhang" v-for="x,index in xunzhangs" >
       <img  :src="x.src" alt=""  @click="clickActive(index)">
       <span >{{x.content}}</span>
@@ -72,13 +72,10 @@
            this.count = index;
         console.log(this.count);
         this.centerDialogVisible=true;
-
-
-
-
-
-
-
+      }
+        ,
+      go:function () {
+        this.$router.goBack();
       }
     }
   }

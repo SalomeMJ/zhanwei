@@ -2,9 +2,12 @@
   <div id="app">
 
 
-    <transition appear>
-    <router-view/>
+    <!--<transition name="fade" mode="out-in">-->
+      <!--<router-view></router-view>-->
+    <!--</transition>-->
 
+    <transition :name="transitionName">
+      <router-view class="child-view"></router-view>
     </transition>
 
 
@@ -20,16 +23,30 @@
 <script>
 export default {
   name: 'app',
-  watch:{
-    '$route' (to, from) {
-      const toDepth = to.path.split('/').length
-      const fromDepth = from.path.split('/').length
-      this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+//  watch:{
+//    '$route' (to, from) {
+//      const toDepth = to.path.split('/').length
+//      const fromDepth = from.path.split('/').length
+//      this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+//    }
+//  }
+//  ,
+  data(){
+    return {
+      transitionName:''
     }
-
-  }
-
-
+  },
+    watch: {
+      '$route' (to, from) {
+        let isBack = this.$router.isBack  //  监听路由变化时的状态为前进还是后退
+        if(isBack) {
+          this.transitionName = 'slide-right'
+        } else {
+          this.transitionName = 'slide-left'
+        }
+        this.$router.isBack = false
+      }
+    }
 }
 </script>
 
@@ -72,16 +89,46 @@ export default {
 
 
   }
-.slide-left-enter, .slide-right-leave-active {
-  opacity: 0;
-  -webkit-transform: translate(50px, 0);
-  transform: translate(50px, 0);
+
+
+
+/*.child-view {*/
+  /*position: absolute;*/
+  /*width:100%;*/
+  /*transition: all .8s cubic-bezier(.55,0,.1,1);*/
+/*}*/
+/*.slide-left-enter, .slide-right-leave-active {*/
+  /*opacity: 0;*/
+  /*-webkit-transform: translate(350px, 0);*/
+  /*transform: translate(50px, 0);*/
+/*}*/
+/*.slide-left-leave-active, .slide-right-enter {*/
+  /*opacity: 0;*/
+  /*-webkit-transform: translate(-350px, 0);*/
+  /*transform: translate(-350px, 0);*/
+/*}*/
+
+.child-view {
+  position: absolute;
+  width: 100%;
+  transition: all .5s ease;
+  top: 40px;
 }
-.slide-left-leave-active, .slide-right-enter {
-  opacity: 0;
-  -webkit-transform: translate(-50px, 0);
-  transform: translate(-50px, 0);
+
+.slide-left-enter,
+.slide-right-leave-active {
+  opacity: 1;
+  -webkit-transform: translate(100%, 0);
+  transform: translate(100%, 0);
 }
+
+.slide-left-leave-active,
+.slide-right-enter {
+  opacity: 1;
+  -webkit-transform: translate(-100%, 0);
+  transform: translate(-100% 0);
+}
+
 </style>
 
 
