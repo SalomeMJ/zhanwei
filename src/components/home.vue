@@ -20,7 +20,7 @@
           <span class="clickFree">点击免费领取</span>
         </div>
         <a href="https://www.baidu.com/">
-          <el-carousel >
+          <el-carousel id="container">
             <el-carousel-item v-for="(item,index) in items" :key="index">
               <h3>{{ item.img }}</h3>
             </el-carousel-item>
@@ -28,37 +28,37 @@
         </a>
       <ul class="contentItem">
         <li>
-          <div>
+          <div @click="jiandu">
             <img src="../assets/c1.png" alt="">
             <span>监督占位</span>
           </div>
-          <div>
+          <div @click="jilu">
             <img src="../assets/c2.png" alt="">
             <span>使用记录</span>
           </div>
-          <div>
+          <div @click="jifen">
             <img src="../assets/c3.png" alt="">
             <span>积分商城</span>
           </div>
-          <div>
+          <div @click="daoju">
             <img src="../assets/c4.png" alt="">
             <span>道具包</span>
           </div>
         </li>
         <li>
-          <div>
+          <div @click="renwu">
             <img src="../assets/c5.png" alt="">
             <span>积分任务</span>
           </div>
-          <div>
+          <div @click="paihang">
             <img src="../assets/c6.png" alt="">
             <span>拍行榜</span>
           </div>
-          <div>
+          <div @click="weigui">
             <img src="../assets/c7.png" alt="">
             <span>违规记录</span>
           </div>
-          <div>
+          <div @click="libao">
             <img src="../assets/c8.png" alt="">
             <span>小礼包</span>
           </div>
@@ -87,16 +87,15 @@
         </ul>
       </div>
     </div>
-
+  <navs></navs>
   </div>
-
-
 </template>
 <script>
+  import navs from '@/components/nav.vue'
   import ElCarouselItem from "../../node_modules/element-ui/packages/carousel/src/item.vue";
 
   export default {
-    components: {ElCarouselItem},
+    components: {ElCarouselItem,navs},
     name:'home',
     data(){
       return {
@@ -110,6 +109,38 @@
     methods:{
       enterDetail:function () {
         this.$router.push({path:'/homedetail'})
+      },
+      //监督占位
+      jiandu:function(){
+        this.$router.push({path:'/homeJiandu'});
+      },
+      //使用记录
+      jilu:function(){
+        this.$router.push({path:'/homeJilu'})
+      },
+      //积分商城
+      jifen:function(){
+        this.$router.push({path:'/homeJifen'})
+      },
+      //道具包
+      daoju:function(){
+        this.$router.push({path:'/homeDaoju'})
+      },
+      //积分任务
+      renwu:function(){
+        this.$router.push({path:'/homeRenwu'})
+      },
+      //排行榜
+      paihang:function(){
+        this.$router.push({path:'/homePaihang'})
+      },
+      //违规记录
+      weigui:function(){
+        this.$router.push({path:'/homeWeigui'})
+      },
+      //小礼包
+      libao:function(){
+        this.$router.push({path:'/homeLibao'})
       }
     }
   }
@@ -123,7 +154,7 @@
   }
   .el-carousel__item h3 {
     display: inline-block;
-    width: 100%;
+    width:100%;
     height: 1.8rem;
     color: #475669;
     font-size: 18px;
@@ -136,13 +167,6 @@
     display: inline-block;
     height: 1.8rem;
   }
- div.e-carousel  {
-    height: 1.8rem;
-    border: 1px solid blue;
-  }
- div.e-carousel__container{
-   height: 1.8rem;
- }
   .el-carousel__item:nth-child(2n) {
     background:url("../assets/b1.jpg");
     background-size: cover;
@@ -162,6 +186,9 @@
     font-size: 0.18rem;
     font-weight: bold;
 
+  }
+  ul.el-carousel__indicators {
+    display: none;
   }
   .top{
     position: relative;
@@ -184,8 +211,18 @@
     right:0.05rem;
     z-index: 9999;
   }
+  div.e-carousel  {
+    height: 1.8rem;
+    border: 1px solid blue;
+  }
+  div.e-carousel__container{
+    height: 1.8rem;
+  }
+  #container {
+    height: 1.8rem;
+  }
   .content{
-    width: 100%;
+    width:100%;
     margin: 0.5rem auto;
     /*height:1rem;*/
     /*border:0.01rem solid red;*/
@@ -246,7 +283,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-top: -0.8rem;
+    /*margin-top: -1rem;*/
     /*border: 0.01rem solid red;*/
     border-bottom:0.01rem solid #999;
   }
@@ -291,14 +328,14 @@
   border-left:0.01rem solid transparent;
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
- border:0.01rem solid red;
+ /*border:0.01rem solid red;*/
   background-color: #fff;
 
 }
 .btns{
   width: 100%;
   height: 0.6rem;
-  border:0.01rem solid red;
+  /*border:0.01rem solid red;*/
   background-color: #fff;
   border-bottom:0.01rem solid #999;
 }
@@ -340,7 +377,7 @@
 .aboutZuo li .left{
   width: 85%;
   height: 0.6rem;
-  border:0.01rem solid red;
+  /*border:0.01rem solid red;*/
 }
   .aboutZuo li .left span{
     display: block;
@@ -362,18 +399,30 @@
     margin-top: -0.6rem;
     font-size: 0.18rem ;
     color:red;
-    border:0.01rem solid blue;
+    /*border:0.01rem solid blue;*/
+    text-align: center;
+  }
+  .aboutZuo li .right span{
+    display: inline-block;
+    /*border:0.01rem solid green;*/
+    margin-left: -0.05rem;
+    margin-top: 0.05rem;
   }
   .aboutZuo li .right p{
     /*display: inline-block;*/
-    width: 30%;
+    width: 100%;
     color:red;
     margin: 0;
     padding: 0;
     font-size: 0.14rem;
     margin-top: 0.05rem;
-    border:0.01rem solid green;
+   text-align: left;
+    text-indent: 0.1rem;
+    /*border:0.01rem solid green;*/
   }
+
+
+
 </style>
 
 
