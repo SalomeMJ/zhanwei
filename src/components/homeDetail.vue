@@ -2,7 +2,15 @@
   <div class="homeDetail">
 
     <h3 ><span  onclick="window.history.go(-1)"> 返回 </span>请选择座位</h3>
-    <h3>123homdetail</h3>
+    <div class="header">
+      <div>
+        <img src="" alt="">
+        <span>出入口</span>
+      </div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <div class="detailBox">
       <div class="detailBlock"></div>
       <div class="detailBlock"></div>
