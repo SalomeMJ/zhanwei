@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/home'
-// import Nav from '@/components/nav'
+import rules from '@/components/rules'
 import Own from '@/components/own'
 import myHonor from '@/components/myHonor'
 import myCode  from '@/components/myCode'
@@ -28,11 +28,11 @@ export default new Router({
       name:'home',
       component:Home
     },
-    // {
-    //   path:'/',
-    //   name:'nav',
-    //   component:Nav
-    // },
+    {
+      path:'/rules',
+      name:'rules',
+      component:rules
+    },
     {
       path:'/homedetail',
       name:'homedetail',

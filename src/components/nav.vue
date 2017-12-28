@@ -2,7 +2,7 @@
  <div>
    <div class="navs">
      <router-link to="/" class="first"> <span class="glyphicon glyphicon-home  "></span> 首页</router-link>
-     <router-link to="/nav"> <span class="glyphicon glyphicon-info-sign"></span>使用规则</router-link>
+     <router-link to="/rules"> <span class="glyphicon glyphicon-info-sign"></span>使用规则</router-link>
      <router-link to="/own"> <span class="glyphicon glyphicon-user"></span>个人中心</router-link>
    </div>
  </div>

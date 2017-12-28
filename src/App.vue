@@ -58,10 +58,9 @@ export default {
 .slide-left-enter, .slide-right-leave-active {
   opacity: 0;
   -webkit-transform: translate(50px, 0);
-  transform: translate(50px, 0);
+  transform: translate(50px, 0)
 
-
-
+}
 
 /*.child-view {*/
   /*position: absolute;*/
@@ -83,7 +82,7 @@ export default {
   position: absolute;
   width: 100%;
   transition: all .5s ease;
-  top: 40px;
+
 }
 
 .slide-left-enter,

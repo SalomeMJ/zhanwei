@@ -47,13 +47,15 @@
 
       </ul>
     </div>
-
+   <navs></navs>
   </div>
 </template>
 
 <script>
+  import navs from '@/components/nav.vue'
   export default {
     name: 'HelloWorld',
+    components: {navs},
     data () {
       return {
         src:  "static/img/touxiang.jpg"
