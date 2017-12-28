@@ -87,6 +87,7 @@
         </ul>
       </div>
     </div>
+    <mjwnavs></mjwnavs>
 
   </div>
 
@@ -94,9 +95,10 @@
 </template>
 <script>
   import ElCarouselItem from "../../node_modules/element-ui/packages/carousel/src/item.vue";
+  import mjwnavs from './mjw-navs.vue'
 
   export default {
-    components: {ElCarouselItem},
+    components: {ElCarouselItem,mjwnavs},
     name:'home',
     data(){
       return {
