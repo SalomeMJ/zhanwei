@@ -3,6 +3,7 @@
     <transition :name="transitionName">
       <router-view class="child-view"></router-view>
     </transition>
+
   </div>
 </template>
 
@@ -54,6 +55,11 @@ export default {
 
 
 
+.slide-left-enter, .slide-right-leave-active {
+  opacity: 0;
+  -webkit-transform: translate(50px, 0);
+  transform: translate(50px, 0);
+
 
 
 
@@ -86,7 +92,6 @@ export default {
   -webkit-transform: translate(100%, 0);
   transform: translate(100%, 0);
 }
-
 .slide-left-leave-active,
 .slide-right-enter {
   opacity: 1;
