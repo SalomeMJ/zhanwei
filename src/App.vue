@@ -8,11 +8,10 @@
 </template>
 
 <script>
-  //引入导航组件
-  import mjwnavs from './components/mjw-navs.vue'
+
 export default {
   name: 'app',
-  components:{mjwnavs},
+
   watch:{
     '$route' (to, from) {
       const toDepth = to.path.split('/').length
